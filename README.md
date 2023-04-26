@@ -5,6 +5,6 @@
 
 <div id="header" align="left">
   <img src="/assets/gcol-log.png" width="400"/>
-  <font size= 100> Graph Coloring </font>
+  <font size= 1000> Graph Coloring </font>
   <br clear="right"/>
 </div>
