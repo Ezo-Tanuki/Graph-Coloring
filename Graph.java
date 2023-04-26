@@ -1,5 +1,5 @@
 public class Graph{
-    int size;
+    final int size;
     protected Node[] nodes;
 
     protected int vertex[][];
@@ -8,6 +8,10 @@ public class Graph{
         this.size = size;
         this.nodes = new Node[size];
         this.vertex = new int[size][size];
+    }
+
+    public Node[] getNodes() {
+        return nodes;
     }
 
     public int[][] getVertex() {
