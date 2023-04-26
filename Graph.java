@@ -2,20 +2,20 @@ public class Graph{
     final int size;
     protected Node[] nodes;
 
-    protected int vertex[][];
+    protected int edges[][];
 
     public Graph(int size) {
         this.size = size;
         this.nodes = new Node[size];
-        this.vertex = new int[size][size];
+        this.edges = new int[size][size];
     }
 
     public Node[] getNodes() {
         return nodes;
     }
 
-    public int[][] getVertex() {
-        return vertex;
+    public int[][] getEdges() {
+        return edges;
     }
     
     public class ConnectNode extends Graph {
@@ -24,8 +24,8 @@ public class Graph{
     }
 
     public void connect(int node1, int node2) {
-          this.vertex[node1][node2] = 1;
-        this.vertex[node2][node1] = 1;
+          this.edges[node1][node2] = 1;
+        this.edges[node2][node1] = 1;
     }
 }
 }
