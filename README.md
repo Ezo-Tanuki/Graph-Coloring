@@ -4,5 +4,5 @@
 ##### --- Mohammad Sulthan Azka - 2602209601
 
 <div id="header" align="left">
-  <img src="/assets/gcol-log.png" width="1000"/>
+  <img src="/assets/gcol-log.png" width="400"/>
 </div>
