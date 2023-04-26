@@ -4,5 +4,5 @@
 ##### --- Mohammad Sulthan Azka - 2602209601
 
 <div id="header" align="left">
-  <img src="/assets/gcol-log.png" width="400"/>
+  <img src="/assets/gcol-log.png" width="400"/> Graph Coloring
 </div>
