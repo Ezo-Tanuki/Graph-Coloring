@@ -24,7 +24,7 @@ public class Graph{
     }
 
     public void connect(int node1, int node2) {
-          this.edges[node1][node2] = 1;
+        this.edges[node1][node2] = 1;
         this.edges[node2][node1] = 1;
     }
 }
