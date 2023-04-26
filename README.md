@@ -4,7 +4,7 @@
 ##### --- Mohammad Sulthan Azka - 2602209601
 
 <div id="header" align="left">
-  <img src="/assets/gcol-log.png" width="400"/> \
-  Graph Coloring
+  <img src="/assets/gcol-log.png" width="400"/>
+  <font size= 100> Graph Coloring </font>
   <br clear="right"/>
 </div>
