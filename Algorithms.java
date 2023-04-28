@@ -18,7 +18,7 @@ public class Algorithms{
             int availableColor = 0;
             Node currentNode = nodeQueue.poll();
 
-            for(Node adjacent : currentNode.adjacent){
+            for(Node adjacent : currentNode.getAdjacent()){
                 unavailableColor.add(adjacent.color);
                 if(!adjacent.visited) nodeQueue.add(adjacent);
             }
