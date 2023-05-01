@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Graph{
     private final int MAX_SIZE;
@@ -30,27 +29,17 @@ public class Graph{
     // }
 
 
-    public boolean addNode(boolean costumIdentifier){
+    public boolean addNode(){
         if(this.size >= this.MAX_SIZE){
             System.out.println("Max size reached!");
             return false;
         }
 
-        Scanner s = new Scanner(System.in);
-        String identifier;
-        if(costumIdentifier){
-            System.out.println("Input the node identifier");
-            identifier = s.nextLine();
-        }
-        else identifier = Integer.toString(this.size);
+        String identifier = Integer.toString(this.size);
 
         this.nodes.add(new Node(identifier));
         this.size++;
         return true;
-    }
-
-    public boolean addNode(){
-        return this.addNode(false);
     }
 
     public void connectNodes(int obj1, int obj2) {
