@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Set;
@@ -14,8 +15,13 @@ public class Algorithms{
         //Set first node to be colored
         nodeQueue.add(nodes.get(0));
         while(!nodeQueue.isEmpty()){
-            Set<Integer> unavailableColor = new HashSet<>(4);
+            //Stores adjacent node color
+            Set<Integer> unavailableColor = new HashSet<>();
+
+            //Initialize first color
             int availableColor = 0;
+
+            //Observe thr frontmost node of the queue
             Node currentNode = nodeQueue.poll();
 
             for(Node adjacent : currentNode.getAdjacent()){
@@ -34,13 +40,26 @@ public class Algorithms{
     }
 
     public void WP(Graph graph){
-        Collections.sort(graph.getNodes(), new NodeComparator());
+        System.out.println("Welsh-Powell Algorithm implementation");
+
+        LinkedList<Node> nodes = new LinkedList<>(graph.getNodes());
+        // nodes.addAll(graph.getNodes());
+
+        Collections.sort(nodes, new NodeDegreeComparator().reversed());
+
+        //Starting color
+        int color = 0;
+
+        while(!nodes.isEmpty()){
+            Iterator it = nodes.listIterator();
+
+        }
     }
 }
 
-class NodeComparator implements Comparator<Node>{
+class NodeDegreeComparator implements Comparator<Node>{
     @Override
     public int compare(Node obj1, Node obj2) {
-        return obj1.degree > obj2.degree ? 0 : 1;
+        return obj1.degree - obj2.degree;
     }
 }
