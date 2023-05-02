@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Node {
     private String identifier;
-    protected int color;
+    private int color;
     private ArrayList<Node> adjacent;
     protected int degree;
     protected boolean visited;
@@ -37,12 +37,16 @@ public class Node {
         this.color = color;
     }
 
-    public String getIdentifier(){
-        return this.identifier;
-    }
-
     public ArrayList<Node> getAdjacent(){
         return this.adjacent;
+    }
+
+    public int getColor(){
+        return this.color;
+    }
+
+    public String getIdentifier(){
+    return this.identifier;
     }
     
 }
