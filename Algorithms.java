@@ -8,6 +8,16 @@ import java.util.Queue;
 import java.util.Set;
 
 public class Algorithms{
+    public boolean validate(Graph graph){
+        for(Node currentNode : graph.getNodes()){
+            for(Node adjacentNode : currentNode.getAdjacent()){
+                if(currentNode.getColor() == adjacentNode.getColor()) return false;
+            }
+        }
+
+        return true;
+    }
+
     public void BF(Graph graph){
         System.out.println("Brute Force 1 Algorithm implementation");
         ArrayList<Node> nodes = graph.getNodes();
@@ -22,7 +32,7 @@ public class Algorithms{
             //Initialize first color
             int availableColor = 0;
 
-            //Observe thr frontmost node of the queue
+            //Observe the frontmost node of the queue
             Node currentNode = nodeQueue.poll();
 
             for(Node adjacent : currentNode.getAdjacent()){
