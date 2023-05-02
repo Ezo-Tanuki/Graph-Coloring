@@ -9,6 +9,7 @@ import java.util.Set;
 
 public class Algorithms{
     public void BF(Graph graph){
+        System.out.println("Brute Force 1 Algorithm implementation");
         ArrayList<Node> nodes = graph.getNodes();
         Queue<Node> nodeQueue = new LinkedList<>();
 
@@ -25,7 +26,7 @@ public class Algorithms{
             Node currentNode = nodeQueue.poll();
 
             for(Node adjacent : currentNode.getAdjacent()){
-                unavailableColor.add(adjacent.color);
+                unavailableColor.add(adjacent.getColor());
                 if(!adjacent.visited) nodeQueue.add(adjacent);
             }
             
@@ -50,9 +51,30 @@ public class Algorithms{
         //Starting color
         int color = 0;
 
+        //Iterate through the queue
         while(!nodes.isEmpty()){
-            Iterator it = nodes.listIterator();
+            Iterator<Node> it = nodes.listIterator();
+            
+            //Check adjacent color
+            do{
+                Node currentNode = it.next();
+                boolean validColor = true;
 
+                for(Node adjacentNode : currentNode.getAdjacent()){
+                    if(adjacentNode.getColor() == color){
+                        validColor = false;
+                        break;
+                    }
+                }
+
+                if(validColor){
+                    currentNode.setColor(color);
+                    it.remove();
+                }
+            }
+            while(it.hasNext());
+            
+            color++;
         }
     }
 }
