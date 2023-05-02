@@ -47,8 +47,6 @@ public class Graph{
     }
 
     public void connectNodes(int obj1, int obj2) {
-        // this.edges[obj1][obj2] = 1;
-        // this.edges[obj2][obj1] = 1;
         Node node1 = nodes.get(obj1);
         Node node2 = nodes.get(obj2);
         node1.addConnection(node2);
@@ -65,7 +63,12 @@ public class Graph{
         }
     }
 
-    
+    public void resetNode() {
+        for(Node node: this.nodes){
+            node.setColor(-1);
+            node.visited = false;
+        }
+    }
 
     public void setColorSchemeMap(Map<Integer, String> colorSchemeMap) {
         this.colorSchemeMap = colorSchemeMap;
