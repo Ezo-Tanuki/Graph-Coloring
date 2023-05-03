@@ -54,14 +54,13 @@ public class Algorithms{
         System.out.println("Welsh-Powell Algorithm implementation");
 
         LinkedList<Node> nodes = new LinkedList<>(graph.getNodes());
-        // nodes.addAll(graph.getNodes());
 
         Collections.sort(nodes, new NodeDegreeComparator().reversed());
 
         //Starting color
         int color = 0;
 
-        //Iterate through the queue
+        //Iterate through the list
         while(!nodes.isEmpty()){
             Iterator<Node> it = nodes.listIterator();
             
