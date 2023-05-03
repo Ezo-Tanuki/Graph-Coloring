@@ -70,12 +70,14 @@ public class Algorithms{
                 boolean validColor = true;
 
                 for(Node adjacentNode : currentNode.getAdjacent()){
+                    //Current color already used on adjacent node
                     if(adjacentNode.getColor() == color){
                         validColor = false;
                         break;
                     }
                 }
 
+                //Remove node from list and set the color to the current node
                 if(validColor){
                     currentNode.setColor(color);
                     it.remove();
