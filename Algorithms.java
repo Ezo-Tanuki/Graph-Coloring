@@ -37,7 +37,7 @@ public class Algorithms{
 
             for(Node adjacent : currentNode.getAdjacent()){
                 unavailableColor.add(adjacent.getColor());
-                if(!adjacent.visited) nodeQueue.add(adjacent);
+                if(!adjacent.isVisited()) nodeQueue.add(adjacent);
             }
             
             while(unavailableColor.contains(availableColor)){
@@ -45,7 +45,7 @@ public class Algorithms{
             }
 
             currentNode.setColor(availableColor);
-            currentNode.visited = true;
+            currentNode.setVisited(true);
         }
 
     }
@@ -93,6 +93,6 @@ public class Algorithms{
 class NodeDegreeComparator implements Comparator<Node>{
     @Override
     public int compare(Node obj1, Node obj2) {
-        return obj1.degree - obj2.degree;
+        return obj1.getDegree() - obj2.getDegree();
     }
 }

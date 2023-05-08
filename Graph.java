@@ -66,7 +66,7 @@ public class Graph{
     public void resetNode() {
         for(Node node: this.nodes){
             node.setColor(-1);
-            node.visited = false;
+            node.setVisited(false);
         }
     }
 
