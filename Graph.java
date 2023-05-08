@@ -3,7 +3,7 @@ import java.util.Map;
 
 public class Graph{
     private final int MAX_SIZE;
-    protected int size;
+    private int size;
     private ArrayList<Node> nodes;
     private Map<Integer, String> colorSchemeMap;
 
