@@ -4,8 +4,8 @@ public class Node {
     private String identifier;
     private int color;
     private ArrayList<Node> adjacent;
-    protected int degree;
-    protected boolean visited;
+    private int degree;
+    private boolean visited;
 
     private void setup(){
         this.setColor(-1);
@@ -33,8 +33,16 @@ public class Node {
         this.degree++;
     }
 
+    public boolean isVisited(){
+        return this.visited;
+    }
+
     public void setColor(int color){
         this.color = color;
+    }
+    
+    public void setVisited(boolean visited){
+        this.visited = visited;
     }
 
     public ArrayList<Node> getAdjacent(){
@@ -43,6 +51,10 @@ public class Node {
 
     public int getColor(){
         return this.color;
+    }
+
+    public int getDegree(){
+        return this.degree;
     }
 
     public String getIdentifier(){

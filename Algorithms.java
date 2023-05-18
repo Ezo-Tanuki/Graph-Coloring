@@ -37,7 +37,7 @@ public class Algorithms{
 
             for(Node adjacent : currentNode.getAdjacent()){
                 unavailableColor.add(adjacent.getColor());
-                if(!adjacent.visited) nodeQueue.add(adjacent);
+                if(!adjacent.isVisited()) nodeQueue.add(adjacent);
             }
             
             while(unavailableColor.contains(availableColor)){
@@ -45,7 +45,7 @@ public class Algorithms{
             }
 
             currentNode.setColor(availableColor);
-            currentNode.visited = true;
+            currentNode.setVisited(true);
         }
 
     }
@@ -54,14 +54,13 @@ public class Algorithms{
         System.out.println("Welsh-Powell Algorithm implementation");
 
         LinkedList<Node> nodes = new LinkedList<>(graph.getNodes());
-        // nodes.addAll(graph.getNodes());
 
         Collections.sort(nodes, new NodeDegreeComparator().reversed());
 
         //Starting color
         int color = 0;
 
-        //Iterate through the queue
+        //Iterate through the list
         while(!nodes.isEmpty()){
             Iterator<Node> it = nodes.listIterator();
             
@@ -71,12 +70,14 @@ public class Algorithms{
                 boolean validColor = true;
 
                 for(Node adjacentNode : currentNode.getAdjacent()){
+                    //Current color already used on adjacent node
                     if(adjacentNode.getColor() == color){
                         validColor = false;
                         break;
                     }
                 }
 
+                //Remove node from list and set the color to the current node
                 if(validColor){
                     currentNode.setColor(color);
                     it.remove();
@@ -92,6 +93,6 @@ public class Algorithms{
 class NodeDegreeComparator implements Comparator<Node>{
     @Override
     public int compare(Node obj1, Node obj2) {
-        return obj1.degree - obj2.degree;
+        return obj1.getDegree() - obj2.getDegree();
     }
 }

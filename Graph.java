@@ -3,7 +3,7 @@ import java.util.Map;
 
 public class Graph{
     private final int MAX_SIZE;
-    protected int size;
+    private int size;
     private ArrayList<Node> nodes;
     private Map<Integer, String> colorSchemeMap;
 
@@ -66,7 +66,7 @@ public class Graph{
     public void resetNode() {
         for(Node node: this.nodes){
             node.setColor(-1);
-            node.visited = false;
+            node.setVisited(false);
         }
     }
 
