@@ -31,7 +31,23 @@ public class MainSet {
                 case 3:
                     System.out.println("Algorithm");
                     Thread.sleep(3000);
-
+                    System.out.println("You chose Algorithm. Please choose an algorithm: (1) Brute force, (2) Welsh-Powell");
+                    int algorithm = Inp.nextInt();
+                    switch (algorithm) {
+                        case 1:
+                            System.out.println("You chose Brute force algorithm.");
+                            Algorithms algorithms = new Algorithms();
+                            algorithms.BF(graph);
+                            break;
+                        case 2:
+                            System.out.println("You chose Welsh-Powell algorithm.");
+                            algorithms = new Algorithms();
+                            algorithms.WP(graph);
+                            break;
+                        default:
+                            System.out.println("Invalid algorithm choice. Please choose a valid algorithm number.");
+                            break;
+                    }
                     menu();
                     continue;
                 case 4:
