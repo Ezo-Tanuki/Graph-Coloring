@@ -29,9 +29,9 @@ public class MainSet {
                     menu();
                     continue;
                 case 3:
-                     System.out.println("Algorithm");
-                     Thread.sleep(3000);
-                     System.out.println("You chose Algorithm. Please choose an algorithm: (1) Brute force, (2) Welsh-Powell");
+                    System.out.println("Algorithm");
+                    Thread.sleep(3000);
+                    System.out.println("You chose Algorithm. Please choose an algorithm: (1) Brute force, (2) Welsh-Powell");
                     int algorithm = Inp.nextInt();
                     switch (algorithm) {
                         case 1:
