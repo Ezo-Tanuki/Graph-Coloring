@@ -37,7 +37,7 @@ public class MainSet {
                         case 1:
                             System.out.println("You chose Brute force algorithm.");
                             Algorithms algorithms = new Algorithms();
-                            algorithms.BF(graph);
+                            algorithms.G1(graph);
                             break;
                         case 2:
                             System.out.println("You chose Welsh-Powell algorithm.");
