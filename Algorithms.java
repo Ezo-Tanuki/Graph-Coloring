@@ -18,8 +18,8 @@ public class Algorithms{
         return true;
     }
 
-    public void BF(Graph graph){
-        System.out.println("Brute Force 1 Algorithm implementation");
+    public void G1(Graph graph){
+        System.out.println("Greedy 1 Algorithm implementation");
         ArrayList<Node> nodes = graph.getNodes();
         Queue<Node> nodeQueue = new LinkedList<>();
 
