@@ -14,16 +14,11 @@ public class Graph{
     }
 
     public Graph(Map<Integer, String> colorSchemeMap, int maxSize) {
-        this.MAX_SIZE = maxSize;
-        this.size = 0;
-        this.nodes = new ArrayList<>(size);
-        this.setColorSchemeMap(colorSchemeMap);
+        this(maxSize, colorSchemeMap);
     }
 
     public Graph(int maxSize, Map<Integer, String> colorSchemeMap) {
-        this.MAX_SIZE = maxSize;
-        this.size = 0;
-        this.nodes = new ArrayList<>(size);
+        this(maxSize);
         this.setColorSchemeMap(colorSchemeMap);
     }
 
