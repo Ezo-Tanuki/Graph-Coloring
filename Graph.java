@@ -73,4 +73,10 @@ public class Graph{
         return nodes;
     }
 
+    public int getMAX_SIZE() {
+        return this.MAX_SIZE;
+    }
+
+    
+
 }
