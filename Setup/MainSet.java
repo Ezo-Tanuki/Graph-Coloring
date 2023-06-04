@@ -44,6 +44,11 @@ public class MainSet {
                             algorithms = new Algorithms();
                             algorithms.WP(graph);
                             break;
+                        case 3:
+                            System.out.println("You chose Dsatur algorithm.");
+                            algorithms = new Algorithms();
+                            algorithms.Dsatur(graph);
+                            break;
                         default:
                             System.out.println("Invalid algorithm choice. Please choose a valid algorithm number.");
                             break;
