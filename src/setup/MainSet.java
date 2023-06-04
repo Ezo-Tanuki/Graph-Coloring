@@ -12,7 +12,7 @@ public class MainSet {
         Scanner s = new Scanner(System.in);
         boolean running = true;
 
-        while (running) {
+        while (running){
 
             System.out.println("-----------------------------------");
             System.out.println("What Would you like to do?");
