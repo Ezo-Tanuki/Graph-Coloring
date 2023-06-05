@@ -51,6 +51,7 @@ public class Setup {
                 case 2:
                     System.out.println("Reset");
                     this.outputGraph.resetNode();
+                    running = false;
                     break;
                 case 3:
                     System.out.println("Returning.....");
@@ -65,6 +66,7 @@ public class Setup {
         outputGraph.setColor(1, Color.YELLOW);
         outputGraph.setColor(2, Color.GREEN);
         outputGraph.setColor(3, Color.LIGHT_GRAY);
+        outputGraph.setColor(4, Color.decode("0xeeffee"));
         return this.outputGraph;
     }
 }

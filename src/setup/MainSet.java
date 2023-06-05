@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import GUI.Frame;
 import GUI.GraphPanel;
-
+import GUI.NodePanel;
 import graph.Algorithms;
 import graph.Graph;
 
@@ -59,6 +59,7 @@ public class MainSet {
 
                     System.out.println("Stop the GUI to continue");
                     while(frame.isActive());
+                    NodePanel.resetDefaultNumber();
 
                     break;
                 case 3:
