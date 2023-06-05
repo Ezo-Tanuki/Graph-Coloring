@@ -1,5 +1,7 @@
 package setup;
 
+import java.awt.Color;
+import java.util.HashMap;
 import java.util.Scanner;
 
 import graph.Graph;
@@ -25,7 +27,7 @@ public class Setup {
             switch (input) {
                 case 1:
                     System.out.println("Beginning Quick setup.....");
-                    Thread.sleep(5000);
+                    // Thread.sleep(5000);
                     System.out.println("Please input the size / number of nodes:");
                     int size = s.nextInt();
                     this.outputGraph = new Graph(size);
@@ -52,11 +54,16 @@ public class Setup {
                 case 3:
                     System.out.println("Returning.....");
                     running = false;
-                    Thread.sleep(4000);
+                    // Thread.sleep(4000);
                     break;
             }
         }
-
+        // s.close();
+        outputGraph.setColorSchemeMap(new HashMap<>(5));
+        outputGraph.setColor(0, Color.CYAN);
+        outputGraph.setColor(1, Color.YELLOW);
+        outputGraph.setColor(2, Color.GREEN);
+        outputGraph.setColor(3, Color.LIGHT_GRAY);
         return this.outputGraph;
     }
 }

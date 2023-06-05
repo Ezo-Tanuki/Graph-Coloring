@@ -1,4 +1,5 @@
 package graph;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -6,7 +7,7 @@ public class Graph{
     private final int MAX_SIZE;
     private int size;
     private ArrayList<Node> nodes;
-    private Map<Integer, String> colorSchemeMap;
+    private Map<Integer, Color> colorSchemeMap;
 
     public Graph() {
         this.MAX_SIZE = Integer.MAX_VALUE;
@@ -14,11 +15,11 @@ public class Graph{
         this.nodes = new ArrayList<>();
     }
 
-    public Graph(Map<Integer, String> colorSchemeMap, int maxSize) {
+    public Graph(Map<Integer, Color> colorSchemeMap, int maxSize) {
         this(maxSize, colorSchemeMap);
     }
 
-    public Graph(int maxSize, Map<Integer, String> colorSchemeMap) {
+    public Graph(int maxSize, Map<Integer, Color> colorSchemeMap) {
         this(maxSize);
         this.setColorSchemeMap(colorSchemeMap);
     }
@@ -66,12 +67,24 @@ public class Graph{
         }
     }
 
-    public void setColorSchemeMap(Map<Integer, String> colorSchemeMap) {
+    public void setColorSchemeMap(Map<Integer, Color> colorSchemeMap) {
         this.colorSchemeMap = colorSchemeMap;
+    }
+
+    public Map<Integer, Color> getColorSchemeMap() {
+        return this.colorSchemeMap;
+    }
+
+    public void setColor(int key, Color value) {
+        this.colorSchemeMap.put(key, value);
     }
 
     public ArrayList<Node> getNodes() {
         return nodes;
+    }
+
+    public int getSize() {
+        return this.size;
     }
 
     public int getMAX_SIZE() {
