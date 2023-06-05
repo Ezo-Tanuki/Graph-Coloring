@@ -52,11 +52,12 @@ public class Graph{
 
     public void printColor() {
         for(Node node: this.nodes){
-            if(colorSchemeMap != null){
-                System.out.println(node.getIdentifier() + ": " + colorSchemeMap.get(node.getColor()));
-            }
+            // if(colorSchemeMap != null){
+            //     System.out.println(node.getIdentifier() + ": " + colorSchemeMap.get(node.getColor()));
+            //     continue;
+            // }
             
-            else System.out.println(node.getIdentifier() + ": " + node.getColor());
+            System.out.println(node.getIdentifier() + ": " + node.getColor());
         }
     }
 

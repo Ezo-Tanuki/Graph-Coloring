@@ -199,7 +199,7 @@ public class GraphPanel extends JPanel implements MouseListener, MouseMotionList
         int screenX = e.getXOnScreen();
         int screenY = e.getYOnScreen();
 
-        System.out.println(screenX + " " + screenY);
+        // System.out.println(screenX + " " + screenY);
 
         prevPt = new Point(screenX, screenY);
 
@@ -231,7 +231,7 @@ public class GraphPanel extends JPanel implements MouseListener, MouseMotionList
         int dx = screenX - (int) prevPt.getX();
         int dy = screenY - (int) prevPt.getY();
 
-        System.out.println(dx + " " + dy);
+        // System.out.println(dx + " " + dy);
 
         NodePanel targetNode = (NodePanel) this.focusedComponent;
 

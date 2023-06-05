@@ -9,7 +9,8 @@ import graph.Graph;
 public class Setup {
     Graph outputGraph;
 
-    public Graph setup() throws InterruptedException {
+    public Graph setup(Graph g) throws InterruptedException {
+        this.outputGraph = g;
         boolean running = true;
         Scanner s = new Scanner(System.in);
         while (running) {
@@ -19,7 +20,7 @@ public class Setup {
             System.out.println("(Please input a number)");
             System.out.println("-------------------------------------------------");
             System.out.println("1 : Quick Setup");
-            System.out.println("2 : Advance Setup");
+            System.out.println("2 : Reset Color");
             System.out.println("3 : Return to Main Menu");
             System.out.println("-------------------------------------------------");
 
@@ -48,8 +49,8 @@ public class Setup {
 
                     break;
                 case 2:
-                    System.out.println("Advance");
-
+                    System.out.println("Reset");
+                    this.outputGraph.resetNode();
                     break;
                 case 3:
                     System.out.println("Returning.....");

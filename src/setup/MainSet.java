@@ -3,6 +3,7 @@ package setup;
 import java.util.Scanner;
 
 import GUI.Frame;
+import GUI.GraphPanel;
 
 import graph.Algorithms;
 import graph.Graph;
@@ -33,7 +34,7 @@ public class MainSet {
                     System.out.println("Going to setup menu....");
                     // Thread.sleep(3000);
                     Setup setup = new Setup();
-                    this.graph = setup.setup();
+                    this.graph = setup.setup(this.graph);
                     break;
                 case 2:
                     if(this.graph == null){
@@ -42,7 +43,7 @@ public class MainSet {
                     }
                     System.out.println("Coloring the graph.....");
                     Frame frame = new Frame();
-                    GUI.GraphPanel g = frame.getGraph();
+                    GraphPanel g = frame.getGraph();
 
                     // Thread.sleep(10000);
                     for(int i = 0; i < this.graph.getSize(); i++){
@@ -55,26 +56,37 @@ public class MainSet {
                             g.connectNode(this.graph.getNodes().indexOf(n), this.graph.getNodes().indexOf(adj));
                         }
                     }
+
+                    System.out.println("Stop the GUI to continue");
+                    while(frame.isActive());
+
                     break;
                 case 3:
 
                     System.out.println("Algorithm");
                     // Thread.sleep(3000);
+                    long startTime;
                     System.out.println(
                             "You chose Algorithm. Please choose an algorithm: (1) Greedy, (2) Welsh-Powell, (3) Dsatur");
                     int algorithm = s.nextInt();
                     switch (algorithm) {
                         case 1:
                             System.out.println("You chose Greedy algorithm.");
+                            startTime = System.currentTimeMillis();
                             Algorithms.G1(graph);
+                            System.out.println("Total execution time: " + (System.currentTimeMillis()-startTime) + "ms");
                             break;
                         case 2:
                             System.out.println("You chose Welsh-Powell algorithm.");
+                            startTime = System.currentTimeMillis();
                             Algorithms.WP(graph);
+                            System.out.println("Total execution time: " + (System.currentTimeMillis()-startTime) + "ms");
                             break;
                         case 3:
                             System.out.println("You chose Dsatur algorithm.");
+                            startTime = System.currentTimeMillis();
                             Algorithms.Dsatur(graph);
+                            System.out.println("Total execution time: " + (System.currentTimeMillis()-startTime) + "ms");
                             break;
                         default:
                             System.out.println(
